@@ -1,6 +1,7 @@
 import React from 'react';
 import { products } from '../data/products';
 import { StyledFeatured } from '../styles/Featred.styles';
+import Button from './Button';
 
 const FeaturedProducts = () => {
 	return (
@@ -12,7 +13,7 @@ const FeaturedProducts = () => {
 							<img src={product.productImg} alt={product.productName} />
 							<h3>{product.productName}</h3>
 							<p>{product.price}</p>
-							<button onClick={(e) => e.preventDefault()}>Buy Now!</button>
+							<Button handler={(e) => e.preventDefault()} text={'Buy Now!'} />
 						</li>
 					);
 				})}

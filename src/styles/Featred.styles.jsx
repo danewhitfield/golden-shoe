@@ -37,7 +37,7 @@ export const StyledFeatured = styled.div`
 	}
 
 	p {
-		color: red;
+		color: #ad1d1d;
 	}
 
 	button {

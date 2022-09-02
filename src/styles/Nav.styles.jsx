@@ -6,7 +6,7 @@ export const StyledNav = styled.nav`
 	align-items: center;
 	padding: 15px 40px;
 	box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
-	background-color: #ad1d1d;
+	background-color: var(--brand-red);
 	color: #fff;
 
 	ul {

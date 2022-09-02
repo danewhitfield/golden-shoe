@@ -38,11 +38,11 @@ export const StyledShop = styled.div`
 	}
 
 	p {
-		color: #ad1d1d;
+		color: var(--brand-red);
 	}
 
-	button {
-		background: #ad1d1d;
+	/* button {
+		background: var(--brand-red);
 		color: #fff;
 		padding: 10px 20px;
 		border-radius: 6px;
@@ -58,8 +58,8 @@ export const StyledShop = styled.div`
 	}
 
 	button:hover {
-		color: #ad1d1d;
+		color: var(--brand-red);
 		background-color: #fff;
 		box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.2);
-	}
+	} */
 `;

@@ -21,6 +21,9 @@ const Nav = () => {
 				<li>
 					<Link to='/faq'>FAQs</Link>
 				</li>
+				<li>
+					<Link to='/returns'>Returns</Link>
+				</li>
 				<li className='cart' qty={qty.toString()}>
 					<Link to='/cart'>
 						<FaShoppingCart />

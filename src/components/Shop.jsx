@@ -1,18 +1,23 @@
 import React, { useContext, useState } from 'react';
 import { BasketContext } from '../context/basket.context';
 import { BasketQtyContext } from '../context/basketQty.context';
+import { ShoeSizeContext } from '../context/shoeSize.context';
 import { products } from '../data/products';
 import { StyledShop } from '../styles/Shop.styles';
+import Button from './Button';
 import LoadMoreBtn from './LoadMoreBtn';
+import SizeBtn from './SizeBtn';
 
 const Shop = () => {
 	const [visibile, setVisible] = useState(6);
 	const { qty, setQty } = useContext(BasketQtyContext);
 	const { basket, setBasket } = useContext(BasketContext);
+	const { shoeSize } = useContext(ShoeSizeContext);
 
 	const handleAddToBasket = (e, product) => {
 		e.preventDefault();
 		setQty((prev) => (+prev + 1).toString());
+		product.shoeSize = shoeSize;
 		setBasket((prev) => [...prev, product]);
 	};
 
@@ -28,10 +33,17 @@ const Shop = () => {
 							<img src={product.productImg} alt={product.productName} />
 							<h3>{product.productName}</h3>
 							<p>{product.price}</p>
-							<button onClick={(e) => e.preventDefault()}>Buy Now!</button>
-							<button onClick={(e) => handleAddToBasket(e, product)}>
-								Add To Basket
-							</button>
+							<div style={{ display: 'flex', gap: '10px' }}>
+								<SizeBtn value={3} />
+								<SizeBtn value={4} />
+								<SizeBtn value={5} />
+								<SizeBtn value={6} />
+							</div>
+							<Button handler={(e) => e.preventDefault()} text={'Buy Now!'} />
+							<Button
+								handler={(e) => handleAddToBasket(e, product)}
+								text={'Add To Basket'}
+							/>
 						</li>
 					);
 				})}

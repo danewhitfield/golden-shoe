@@ -31,7 +31,7 @@ export const products = [
 	{
 		productName: 'Soleless',
 		productImg:
-			'https://www.pngmart.com/files/1/Nike-Shoes-Transparent-PNG.png',
+			'https://www.pngmart.com/files/7/Dance-Shoes-PNG-Free-Download.png',
 		price: '£1.99',
 	},
 	{
@@ -66,7 +66,7 @@ export const products = [
 	{
 		productName: 'Soleless',
 		productImg:
-			'https://www.pngmart.com/files/1/Nike-Shoes-Transparent-PNG.png',
+			'https://www.pngmart.com/files/7/Dance-Shoes-PNG-Free-Download.png',
 		price: '£1.99',
 	},
 	{
@@ -101,7 +101,7 @@ export const products = [
 	{
 		productName: 'Soleless',
 		productImg:
-			'https://www.pngmart.com/files/1/Nike-Shoes-Transparent-PNG.png',
+			'https://www.pngmart.com/files/7/Dance-Shoes-PNG-Free-Download.png',
 		price: '£1.99',
 	},
 	{
@@ -136,7 +136,7 @@ export const products = [
 	{
 		productName: 'Soleless',
 		productImg:
-			'https://www.pngmart.com/files/1/Nike-Shoes-Transparent-PNG.png',
+			'https://www.pngmart.com/files/7/Dance-Shoes-PNG-Free-Download.png',
 		price: '£1.99',
 	},
 ];

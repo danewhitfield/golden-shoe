@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
 export const StyledNav = styled.nav`
+	position: fixed;
+	width: 100%;
+	top: 0;
+	z-index: 1000;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -25,7 +29,7 @@ export const StyledNav = styled.nav`
 
 		&::after {
 			/* content: '${(props) => props.qty}'; */
-			content: '${({ qty }) => (qty ? qty : '0')}';
+			content: '${(props) => (props.qty ? props.qty : '0')}';
 			position: absolute;
 			display: flex;
 			justify-content: center;

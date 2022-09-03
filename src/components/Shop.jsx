@@ -8,6 +8,10 @@ import Button from './Button';
 import LoadMoreBtn from './LoadMoreBtn';
 import SizeBtn from './SizeBtn';
 
+// TOAST
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const Shop = () => {
 	const [visibile, setVisible] = useState(6);
 	const { qty, setQty } = useContext(BasketQtyContext);
@@ -16,22 +20,35 @@ const Shop = () => {
 
 	const handleAddToBasket = (e, product) => {
 		e.preventDefault();
-		setQty((prev) => (+prev + 1).toString());
-		product.shoeSize = shoeSize;
-		setBasket((prev) => [...prev, product]);
+
+		if (!shoeSize) {
+			toast('Please select a shoe size');
+		}
+
+		if (shoeSize) {
+			if (product.stockQty > 0) {
+				setQty((prev) => (+prev + 1).toString());
+				product.shoeSize = shoeSize;
+				setBasket((prev) => [...prev, product]);
+				toast(`${product.productName} has been added to your basket!`);
+			} else {
+				toast('Out of stock');
+			}
+		}
 	};
 
-	console.log(basket);
+	console.log(basket, '<<< BASKET');
 
 	return (
 		<StyledShop>
 			<h1 style={{ marginBottom: '30px' }}>Shop</h1>
 			<ul>
-				{products.slice(0, visibile).map((product) => {
+				{products.slice(0, visibile).map((product, i) => {
 					return (
-						<li>
+						<li key={i}>
 							<img src={product.productImg} alt={product.productName} />
 							<h3>{product.productName}</h3>
+							<span>{`stock: ${product.stockQty}`}</span>
 							<p>{product.price}</p>
 							<div style={{ display: 'flex', gap: '10px' }}>
 								<SizeBtn value={3} />
@@ -53,7 +70,8 @@ const Shop = () => {
 					? `${visibile}/${products.length} items showing`
 					: `${products.length}/${products.length} items showing`}
 			</p>
-			<LoadMoreBtn setVisible={setVisible} />
+			{visibile < products.length && <LoadMoreBtn setVisible={setVisible} />}
+			<ToastContainer position='top-center' />
 		</StyledShop>
 	);
 };

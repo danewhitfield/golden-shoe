@@ -7,8 +7,6 @@ import { BasketQtyContext } from '../context/basketQty.context';
 const Nav = () => {
 	const { qty } = useContext(BasketQtyContext);
 
-	console.log(qty, '<<< QTY');
-
 	return (
 		<StyledNav>
 			<Link to={'/'}>
@@ -24,7 +22,7 @@ const Nav = () => {
 				<li>
 					<Link to='/returns'>Returns</Link>
 				</li>
-				<li className='cart' qty={qty.toString()}>
+				<li className='cart' qty={qty}>
 					<Link to='/cart'>
 						<FaShoppingCart />
 					</Link>

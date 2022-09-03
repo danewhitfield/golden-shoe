@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
-export const StyledSizeBtn = styled.button`
+export const StyledLoadMoreBtn = styled.button`
 	background: var(--brand-red);
 	color: #fff;
 	padding: 10px 20px;
 	border-radius: 6px;
-	width: 40px;
+	width: 10%;
 	font-weight: bold;
 	text-transform: uppercase;
 	cursor: pointer;
@@ -13,14 +13,9 @@ export const StyledSizeBtn = styled.button`
 	border: none;
 	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
 	transition: all ease 0.2s;
-	margin-bottom: -10px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	margin-top: 30px;
 
-	&:hover,
-	&:active,
-	&:focus {
+	&:hover {
 		color: var(--brand-red);
 		background-color: #fff;
 		box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.2);

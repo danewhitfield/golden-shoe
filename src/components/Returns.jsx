@@ -1,14 +1,39 @@
 import React from 'react';
 import { StyledReturns } from '../styles/Returns.styles';
+import Button from './Button';
+
+// TOAST
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useState } from 'react';
 
 const Returns = () => {
+	const [name, setName] = useState('');
+
+	const notify = () =>
+		toast(
+			`${name}, your refund is being processed! We're sorry for any inconvenience 😊`
+		);
+
+	const handleReturn = (e) => {
+		e.preventDefault();
+		if (!name) return toast('Please enter your full name');
+		notify();
+	};
+
 	return (
 		<StyledReturns>
 			<h1>Fill out our simple returns form</h1>
 			<form style={{ display: 'flex', flexDirection: 'column', width: '20%' }}>
 				<div>
 					<label htmlFor='name'>Full Name</label>
-					<input type='text' name='name' id='name' placeholder='DJ Khaled' />
+					<input
+						type='text'
+						name='name'
+						id='name'
+						placeholder='DJ Khaled'
+						onChange={(e) => setName(e.target.value)}
+					/>
 				</div>
 
 				<div>
@@ -41,7 +66,8 @@ const Returns = () => {
 					/>
 				</div>
 
-				<button>Submit Refund</button>
+				<Button text={'Submit Return'} handler={handleReturn} />
+				<ToastContainer position='top-center' />
 			</form>
 		</StyledReturns>
 	);

@@ -5,6 +5,7 @@ import { StyledFaqs } from '../styles/FAQ.styles';
 const FAQ = () => {
 	return (
 		<StyledFaqs>
+			<h1>FAQ's</h1>
 			<ul>
 				{faqs.map((faq) => {
 					return (

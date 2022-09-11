@@ -30,6 +30,7 @@ const Shop = () => {
 				setQty((prev) => (+prev + 1).toString());
 				product.shoeSize = shoeSize;
 				setBasket((prev) => [...prev, product]);
+				product.stockQty--;
 				toast(`${product.productName} has been added to your basket!`);
 			} else {
 				toast('Out of stock');

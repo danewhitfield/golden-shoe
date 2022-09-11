@@ -22,7 +22,7 @@ const Nav = () => {
 				<li>
 					<Link to='/returns'>Returns</Link>
 				</li>
-				<li className='cart' qty={qty}>
+				<li qty={qty}>
 					<Link to='/cart'>
 						<FaShoppingCart />
 					</Link>

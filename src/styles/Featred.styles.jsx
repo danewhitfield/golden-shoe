@@ -40,24 +40,36 @@ export const StyledFeatured = styled.div`
 		color: #ad1d1d;
 	}
 
-	button {
-		background: #ad1d1d;
-		color: #fff;
-		padding: 10px 20px;
-		border-radius: 6px;
-		width: 100%;
-		font-weight: bold;
-		text-transform: uppercase;
-		cursor: pointer;
-		outline: none;
-		border: none;
-		box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-		transition: all ease 0.2s;
-	}
+	@media only screen and (max-width: 600px) {
+		display: flex;
+		flex-wrap: wrap;
 
-	button:hover {
-		color: #ad1d1d;
-		background-color: #fff;
-		box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.2);
+		@media only screen and (max-width: 600px) {
+			ul {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				align-items: center;
+				gap: 30px;
+				list-style: none;
+			}
+
+			li {
+				width: 60%;
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				gap: 20px;
+				padding: 30px;
+				box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.1);
+				transition: all ease 0.2s;
+			}
+
+			img {
+				width: 150px;
+			}
+		}
 	}
 `;

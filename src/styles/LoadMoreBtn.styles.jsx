@@ -5,7 +5,7 @@ export const StyledLoadMoreBtn = styled.button`
 	color: #fff;
 	padding: 10px 20px;
 	border-radius: 6px;
-	width: 10%;
+	width: 200px;
 	font-weight: bold;
 	text-transform: uppercase;
 	cursor: pointer;

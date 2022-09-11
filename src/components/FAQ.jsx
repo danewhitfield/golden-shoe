@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaQq } from 'react-icons/fa';
 import { faqs } from '../data/faqs';
 import { StyledFaqs } from '../styles/FAQ.styles';
 
@@ -11,7 +12,10 @@ const FAQ = () => {
 					return (
 						<li>
 							<h3>Q. {faq.question}</h3>
-							<p>A. {faq.answer}</p>
+							<p>
+								{`A. ${faq.answer} `}
+								{faq.answer.includes('returns') && <a href='/returns'>here</a>}
+							</p>
 						</li>
 					);
 				})}
